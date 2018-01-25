@@ -408,13 +408,7 @@ void Game::update()
 			bottomSide[i].setX(bottomSide[i].X() -0.001);
 			backSide[i].setX(backSide[i].X() -0.001);
 
-			/*frontSide[i].setY(frontSide[i].Y() - 0.001);
-			leftSide[i].setY(leftSide[i].Y() - 0.001);
-			rightSide[i].setY(rightSide[i].Y() - 0.001);
-			topSide[i].setY(topSide[i].Y() - 0.001);
-			bottomSide[i].setY(bottomSide[i].Y() - 0.001);
-			backSide[i].setY(backSide[i].Y() - 0.001);*/
-
+		
 		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
@@ -428,13 +422,7 @@ void Game::update()
 			bottomSide[i].setX(bottomSide[i].X() + 0.001);
 			backSide[i].setX(backSide[i].X() + 0.001);
 
-			/*frontSide[i].setY(frontSide[i].Y() + 0.001);
-			leftSide[i].setY(leftSide[i].Y() + 0.001);
-			rightSide[i].setY(rightSide[i].Y() + 0.001);
-			topSide[i].setY(topSide[i].Y() + 0.001);
-			bottomSide[i].setY(bottomSide[i].Y() + 0.001);
-			backSide[i].setY(backSide[i].Y() + 0.001);
-*/
+		
 
 
 		}
@@ -497,7 +485,7 @@ void Game::draw()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	cout << "Drawing Cube " << endl;
-	glTranslatef(0, 0, 0);
+	
 	glLoadIdentity();
 	
 	
@@ -505,7 +493,7 @@ void Game::draw()
 	glCallList(1);
 
 	window.display();
-	glTranslatef(0, 0, -10);
+	
 	
 }
 
