@@ -339,7 +339,7 @@ void Game::update()
 
 		}
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::M))
 	{
 
 		for (int i = 0; i < 4; i++)
@@ -368,7 +368,7 @@ void Game::update()
 
 		}
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::N))
 	{
 
 		for (int i = 0; i < 4; i++)
@@ -439,14 +439,50 @@ void Game::update()
 
 		}
 	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			
+
+			frontSide[i].setY(frontSide[i].Y() - 0.001);
+			leftSide[i].setY(leftSide[i].Y() - 0.001);
+			rightSide[i].setY(rightSide[i].Y() - 0.001);
+			topSide[i].setY(topSide[i].Y() - 0.001);
+			bottomSide[i].setY(bottomSide[i].Y() - 0.001);
+			backSide[i].setY(backSide[i].Y() - 0.001);
+			
+
+
+		}
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			
+
+			frontSide[i].setY(frontSide[i].Y() + 0.001);
+			leftSide[i].setY(leftSide[i].Y() + 0.001);
+			rightSide[i].setY(rightSide[i].Y() + 0.001);
+			topSide[i].setY(topSide[i].Y() + 0.001);
+			bottomSide[i].setY(bottomSide[i].Y() + 0.001);
+			backSide[i].setY(backSide[i].Y() + 0.001);
+			
+
+
+		}
+	}
 	cout << "Update up" << endl;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)
 		|| sf::Keyboard::isKeyPressed(sf::Keyboard::X)
 		|| sf::Keyboard::isKeyPressed(sf::Keyboard::Y)
-		|| sf::Keyboard::isKeyPressed(sf::Keyboard::Up)
-		|| sf::Keyboard::isKeyPressed(sf::Keyboard::Down)
+		|| sf::Keyboard::isKeyPressed(sf::Keyboard::M)
+		|| sf::Keyboard::isKeyPressed(sf::Keyboard::N)
 		|| sf::Keyboard::isKeyPressed(sf::Keyboard::Left)
-		|| sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		|| sf::Keyboard::isKeyPressed(sf::Keyboard::Right)
+		|| sf::Keyboard::isKeyPressed(sf::Keyboard::Up)
+		|| sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
 		
 		updatePos();
