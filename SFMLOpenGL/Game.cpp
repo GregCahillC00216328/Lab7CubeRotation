@@ -224,12 +224,40 @@ void Game::update()
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			frontSide[i] = matrixIdentity.RotationZ(0.5) * frontSide[i];
-			leftSide[i] = matrixIdentity.RotationZ(0.5) * leftSide[i];
-			rightSide[i] = matrixIdentity.RotationZ(0.5) * rightSide[i];
-			topSide[i] = matrixIdentity.RotationZ(0.5) * topSide[i];
-			bottomSide[i] = matrixIdentity.RotationZ(0.5) * bottomSide[i];
-			backSide[i] = matrixIdentity.RotationZ(0.5) * backSide[i];
+			
+			frontSide[i].setZ(frontSide[i].Z() + transVal);
+			leftSide[i].setZ(leftSide[i].Z() + transVal);
+			rightSide[i].setZ(rightSide[i].Z() + transVal);
+			topSide[i].setZ(topSide[i].Z() + transVal);
+			bottomSide[i].setZ(bottomSide[i].Z() + transVal);
+			backSide[i].setZ(backSide[i].Z() + transVal);
+
+			
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift))
+			{
+				frontSide[i] = matrixIdentity.RotationZ(-0.5) * frontSide[i];
+				leftSide[i] = matrixIdentity.RotationZ(-0.5) * leftSide[i];
+				rightSide[i] = matrixIdentity.RotationZ(-0.5) * rightSide[i];
+				topSide[i] = matrixIdentity.RotationZ(-0.5) * topSide[i];
+				bottomSide[i] = matrixIdentity.RotationZ(-0.5) * bottomSide[i];
+				backSide[i] = matrixIdentity.RotationZ(-0.5) * backSide[i];
+			}
+			else
+			{
+				frontSide[i] = matrixIdentity.RotationZ(0.5) * frontSide[i];
+				leftSide[i] = matrixIdentity.RotationZ(0.5) * leftSide[i];
+				rightSide[i] = matrixIdentity.RotationZ(0.5) * rightSide[i];
+				topSide[i] = matrixIdentity.RotationZ(0.5) * topSide[i];
+				bottomSide[i] = matrixIdentity.RotationZ(0.5) * bottomSide[i];
+				backSide[i] = matrixIdentity.RotationZ(0.5) * backSide[i];
+			}
+
+			frontSide[i].setZ(frontSide[i].Z() - transVal);
+			leftSide[i].setZ(leftSide[i].Z() - transVal);
+			rightSide[i].setZ(rightSide[i].Z() - transVal);
+			topSide[i].setZ(topSide[i].Z() - transVal);
+			bottomSide[i].setZ(bottomSide[i].Z() - transVal);
+			backSide[i].setZ(backSide[i].Z() - transVal);
 
 		}
 	}
@@ -237,12 +265,37 @@ void Game::update()
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			frontSide[i] = matrixIdentity.RotationX(0.5) * frontSide[i];
-			leftSide[i] = matrixIdentity.RotationX(0.5) * leftSide[i];
-			rightSide[i] = matrixIdentity.RotationX(0.5) * rightSide[i];
-			topSide[i] = matrixIdentity.RotationX(0.5) * topSide[i];
-			bottomSide[i] = matrixIdentity.RotationX(0.5) * bottomSide[i];
-			backSide[i] = matrixIdentity.RotationX(0.5) * backSide[i];
+			frontSide[i].setZ(frontSide[i].Z() + transVal);
+			leftSide[i].setZ(leftSide[i].Z() + transVal);
+			rightSide[i].setZ(rightSide[i].Z() + transVal);
+			topSide[i].setZ(topSide[i].Z() + transVal);
+			bottomSide[i].setZ(bottomSide[i].Z() + transVal);
+			backSide[i].setZ(backSide[i].Z() + transVal);
+
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift))
+			{
+				frontSide[i] = matrixIdentity.RotationX(-0.5) * frontSide[i];
+				leftSide[i] = matrixIdentity.RotationX(-0.5) * leftSide[i];
+				rightSide[i] = matrixIdentity.RotationX(-0.5) * rightSide[i];
+				topSide[i] = matrixIdentity.RotationX(-0.5) * topSide[i];
+				bottomSide[i] = matrixIdentity.RotationX(-0.5) * bottomSide[i];
+				backSide[i] = matrixIdentity.RotationX(-0.5) * backSide[i];
+			}
+			else
+			{
+				frontSide[i] = matrixIdentity.RotationX(0.5) * frontSide[i];
+				leftSide[i] = matrixIdentity.RotationX(0.5) * leftSide[i];
+				rightSide[i] = matrixIdentity.RotationX(0.5) * rightSide[i];
+				topSide[i] = matrixIdentity.RotationX(0.5) * topSide[i];
+				bottomSide[i] = matrixIdentity.RotationX(0.5) * bottomSide[i];
+				backSide[i] = matrixIdentity.RotationX(0.5) * backSide[i];
+			}
+			frontSide[i].setZ(frontSide[i].Z() - transVal);
+			leftSide[i].setZ(leftSide[i].Z() - transVal);
+			rightSide[i].setZ(rightSide[i].Z() - transVal);
+			topSide[i].setZ(topSide[i].Z() - transVal);
+			bottomSide[i].setZ(bottomSide[i].Z() - transVal);
+			backSide[i].setZ(backSide[i].Z() - transVal);
 
 		}
 	}
@@ -251,26 +304,95 @@ void Game::update()
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			frontSide[i] = matrixIdentity.RotationY(0.5) * frontSide[i];
-			leftSide[i] = matrixIdentity.RotationY(0.5) * leftSide[i];
-			rightSide[i] = matrixIdentity.RotationY(0.5) * rightSide[i];
-			topSide[i] = matrixIdentity.RotationY(0.5) * topSide[i];
-			bottomSide[i] = matrixIdentity.RotationY(0.5) * bottomSide[i];
-			backSide[i] = matrixIdentity.RotationY(0.5) * backSide[i];
+			frontSide[i].setZ(frontSide[i].Z() + transVal);
+			leftSide[i].setZ(leftSide[i].Z() + transVal);
+			rightSide[i].setZ(rightSide[i].Z() + transVal);
+			topSide[i].setZ(topSide[i].Z() + transVal);
+			bottomSide[i].setZ(bottomSide[i].Z() + transVal);
+			backSide[i].setZ(backSide[i].Z() + transVal);
+			
+
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift))
+			{
+				frontSide[i] = matrixIdentity.RotationY(-0.5) * frontSide[i];
+				leftSide[i] = matrixIdentity.RotationY(-0.5) * leftSide[i];
+				rightSide[i] = matrixIdentity.RotationY(-0.5) * rightSide[i];
+				topSide[i] = matrixIdentity.RotationY(-0.5) * topSide[i];
+				bottomSide[i] = matrixIdentity.RotationY(-0.5) * bottomSide[i];
+				backSide[i] = matrixIdentity.RotationY(-0.5) * backSide[i];
+			}
+			else
+			{
+				frontSide[i] = matrixIdentity.RotationY(0.5) * frontSide[i];
+				leftSide[i] = matrixIdentity.RotationY(0.5) * leftSide[i];
+				rightSide[i] = matrixIdentity.RotationY(0.5) * rightSide[i];
+				topSide[i] = matrixIdentity.RotationY(0.5) * topSide[i];
+				bottomSide[i] = matrixIdentity.RotationY(0.5) * bottomSide[i];
+				backSide[i] = matrixIdentity.RotationY(0.5) * backSide[i];
+			}
+			frontSide[i].setZ(frontSide[i].Z() - transVal);
+			leftSide[i].setZ(leftSide[i].Z() - transVal);
+			rightSide[i].setZ(rightSide[i].Z() - transVal);
+			topSide[i].setZ(topSide[i].Z() - transVal);
+			bottomSide[i].setZ(bottomSide[i].Z() - transVal);
+			backSide[i].setZ(backSide[i].Z() - transVal);
 
 		}
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
+
 		for (int i = 0; i < 4; i++)
 		{
-			frontSide[i] = matrixIdentity.Scale(0.005,0.005) * frontSide[i];
-			leftSide[i] = matrixIdentity.Scale(0.005, 0.005) * leftSide[i];
-			rightSide[i] = matrixIdentity.Scale(0.005, 0.005) * rightSide[i];
-			topSide[i] = matrixIdentity.Scale(0.005, 0.005) * topSide[i];
-			bottomSide[i] = matrixIdentity.Scale(0.005, 0.005) * bottomSide[i];
-			backSide[i] = matrixIdentity.Scale(0.005, 0.005) * backSide[i];
+			frontSide[i].setZ(frontSide[i].Z() + transVal);
+			leftSide[i].setZ(leftSide[i].Z() + transVal);
+			rightSide[i].setZ(rightSide[i].Z() + transVal);
+			topSide[i].setZ(topSide[i].Z() + transVal);
+			bottomSide[i].setZ(bottomSide[i].Z() + transVal);
+			backSide[i].setZ(backSide[i].Z() + transVal);
 
+			frontSide[i] = matrixIdentity.Scale3D(0.999) * frontSide[i];
+			leftSide[i] = matrixIdentity.Scale3D(0.999) * leftSide[i];
+			rightSide[i] = matrixIdentity.Scale3D(0.999) * rightSide[i];
+			topSide[i] = matrixIdentity.Scale3D(0.999) * topSide[i];
+			bottomSide[i] = matrixIdentity.Scale3D(0.999) * bottomSide[i];
+			backSide[i] = matrixIdentity.Scale3D(0.999) * backSide[i];
+
+			frontSide[i].setZ(frontSide[i].Z() - transVal);
+			leftSide[i].setZ(leftSide[i].Z() - transVal);
+			rightSide[i].setZ(rightSide[i].Z() - transVal);
+			topSide[i].setZ(topSide[i].Z() - transVal);
+			bottomSide[i].setZ(bottomSide[i].Z() - transVal);
+			backSide[i].setZ(backSide[i].Z() - transVal);
+
+
+		}
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	{
+
+		for (int i = 0; i < 4; i++)
+		{
+			frontSide[i].setZ(frontSide[i].Z() + transVal);
+			leftSide[i].setZ(leftSide[i].Z() + transVal);
+			rightSide[i].setZ(rightSide[i].Z() + transVal);
+			topSide[i].setZ(topSide[i].Z() + transVal);
+			bottomSide[i].setZ(bottomSide[i].Z() + transVal);
+			backSide[i].setZ(backSide[i].Z() + transVal);
+
+			frontSide[i] = matrixIdentity.Scale3D(1.001) * frontSide[i];
+			leftSide[i] = matrixIdentity.Scale3D(1.001) * leftSide[i];
+			rightSide[i] = matrixIdentity.Scale3D(1.001) * rightSide[i];
+			topSide[i] = matrixIdentity.Scale3D(1.001) * topSide[i];
+			bottomSide[i] = matrixIdentity.Scale3D(1.001) * bottomSide[i];
+			backSide[i] = matrixIdentity.Scale3D(1.001) * backSide[i];
+
+			frontSide[i].setZ(frontSide[i].Z() - transVal);
+			leftSide[i].setZ(leftSide[i].Z() - transVal);
+			rightSide[i].setZ(rightSide[i].Z() - transVal);
+			topSide[i].setZ(topSide[i].Z() - transVal);
+			bottomSide[i].setZ(bottomSide[i].Z() - transVal);
+			backSide[i].setZ(backSide[i].Z() - transVal);
 
 
 		}
@@ -279,14 +401,19 @@ void Game::update()
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			frontSide[i] = matrixIdentity.Translate(-10, 1) * frontSide[i];
-			leftSide[i] = matrixIdentity.Translate(-1, 1) * leftSide[i];
-			rightSide[i] = matrixIdentity.Translate(-1, 1) * rightSide[i];
-			topSide[i] = matrixIdentity.Translate(-1, 1) * topSide[i];
-			bottomSide[i] = matrixIdentity.Translate(-1, 1) * bottomSide[i];
-			backSide[i] = matrixIdentity.Translate(-1, 1) * backSide[i];
+			frontSide[i].setX(frontSide[i].X() -0.001);
+			leftSide[i].setX(leftSide[i].X() -0.001);
+			rightSide[i].setX(rightSide[i].X() -0.001);
+			topSide[i].setX(topSide[i].X() -0.001);
+			bottomSide[i].setX(bottomSide[i].X() -0.001);
+			backSide[i].setX(backSide[i].X() -0.001);
 
-
+			/*frontSide[i].setY(frontSide[i].Y() - 0.001);
+			leftSide[i].setY(leftSide[i].Y() - 0.001);
+			rightSide[i].setY(rightSide[i].Y() - 0.001);
+			topSide[i].setY(topSide[i].Y() - 0.001);
+			bottomSide[i].setY(bottomSide[i].Y() - 0.001);
+			backSide[i].setY(backSide[i].Y() - 0.001);*/
 
 		}
 	}
@@ -294,22 +421,30 @@ void Game::update()
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			frontSide[i] = matrixIdentity.Translate(1, -1) * frontSide[i];
-			leftSide[i] = matrixIdentity.Translate(1, -1) * leftSide[i];
-			rightSide[i] = matrixIdentity.Translate(1, -1) * rightSide[i];
-			topSide[i] = matrixIdentity.Translate(1, -1) * topSide[i];
-			bottomSide[i] = matrixIdentity.Translate(1, -1) * bottomSide[i];
-			backSide[i] = matrixIdentity.Translate(1, -1) * backSide[i];
+			frontSide[i].setX(frontSide[i].X() + 0.001);
+			leftSide[i].setX(leftSide[i].X() + 0.001);
+			rightSide[i].setX(rightSide[i].X() + 0.001);
+			topSide[i].setX(topSide[i].X() + 0.001);
+			bottomSide[i].setX(bottomSide[i].X() + 0.001);
+			backSide[i].setX(backSide[i].X() + 0.001);
 
+			/*frontSide[i].setY(frontSide[i].Y() + 0.001);
+			leftSide[i].setY(leftSide[i].Y() + 0.001);
+			rightSide[i].setY(rightSide[i].Y() + 0.001);
+			topSide[i].setY(topSide[i].Y() + 0.001);
+			bottomSide[i].setY(bottomSide[i].Y() + 0.001);
+			backSide[i].setY(backSide[i].Y() + 0.001);
+*/
 
 
 		}
 	}
 	cout << "Update up" << endl;
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)
+		|| sf::Keyboard::isKeyPressed(sf::Keyboard::X)
 		|| sf::Keyboard::isKeyPressed(sf::Keyboard::Y)
-		|| sf::Keyboard::isKeyPressed(sf::Keyboard::Z)
-		|| sf::Keyboard::isKeyPressed(sf::Keyboard::Space)
+		|| sf::Keyboard::isKeyPressed(sf::Keyboard::Up)
+		|| sf::Keyboard::isKeyPressed(sf::Keyboard::Down)
 		|| sf::Keyboard::isKeyPressed(sf::Keyboard::Left)
 		|| sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{

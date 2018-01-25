@@ -38,4 +38,5 @@ private:
 	Vector3 bottomSide[4];
 
 	float rotationAngle = 0.05f;
+	float transVal = 10;
 };

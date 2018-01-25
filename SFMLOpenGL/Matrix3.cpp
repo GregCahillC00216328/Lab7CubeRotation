@@ -269,15 +269,15 @@ Matrix3 Matrix3::RotationZ(double t_angle)
 Matrix3 Matrix3::Scale3D(double t_dx)
 {
 	Matrix3 answer =Matrix3();
-	answer.A11 = (double)t_dx / 100;
+	answer.A11 = (double)t_dx;
 	answer.A12 = 0;
 	answer.A13 = 0;
 	answer.A21 = 0;
-	answer.A22 = (double)t_dx / 100;
+	answer.A22 = (double)t_dx ;
 	answer.A23 = 0;
 	answer.A31 = 0;
 	answer.A32 = 0;
-	answer.A33 = (double)t_dx / 100;
+	answer.A33 = (double)t_dx ;
 
 	return answer;
 }
